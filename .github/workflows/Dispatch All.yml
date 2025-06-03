@@ -1,6 +1,7 @@
 name: 运行所有工作流
 on:
   workflow_dispatch:
+    - cron: '0 23 * * 0'
 
 jobs:
   trigger-workflows:
@@ -24,6 +25,7 @@ jobs:
             "oneplus13t整合.yml"
             "padpro.yml"
           )
+          
 
           for wf in "${workflows[@]}"; do
             echo "Dispatching $wf..."
